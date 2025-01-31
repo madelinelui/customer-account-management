@@ -1,0 +1,32 @@
+.usercard{
+    background-color: pink;
+    color: black;
+    padding: 15px 32px;
+    border: 1px solid black;
+    margin: 15px auto; /* Add spacing between cards */
+    max-width: 300px; /* Limit card width */
+}
+
+.usercard h3 {
+    text-align: center;
+
+}
+
+.usercard p {
+    margin: 2px 0;
+    text-align: left;
+}
+
+.buttons {
+    margin-top: 15px;
+}
+
+button {
+    margin: 3px;
+    border: 1px solid gray;
+
+}
+
+button:hover {
+    opacity: 0.8; /* Slight transparency on hover */
+  }

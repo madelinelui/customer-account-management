@@ -1,0 +1,27 @@
+.ProductCard{
+    background-color: aquamarine;
+    border: 1px black;
+    padding: 10px 32px;
+    margin: 20px auto;
+    max-width: 350px;
+    position: relative;
+}
+
+.ProductCard h2 {
+    text-align: center;
+}
+
+.ProductCard span {
+    text-align: left;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    align-items: right;
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+}

@@ -1,0 +1,538 @@
+body {
+    background-color: beige;
+
+    font-size: 24 px;
+    margin: 0;
+    padding: 0;
+
+
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+}
+
+.nav-bar:hover ~ .overlay {
+    display: block;
+}
+
+
+/* ------ NAVIGATION BAR ------- */
+
+.nav-bar {
+    list-style-type: none;
+    margin: 10% 0%;
+    padding: 10px 16px;
+    width: 135px;
+    background-color:darkcyan;
+    position: fixed;
+    border-radius: 6px;
+    z-index: 1000;
+}
+
+.nav-bar li {
+    width:100%;
+}
+
+.nav-bar a {
+
+    display: block;
+    color: whitesmoke;
+    padding: 12px 0px;
+    margin-top:10%;
+    text-decoration: none;
+    text-align: left;
+    font-size: 1rem;
+    width:100%;
+    
+}
+
+.nav-bar li:hover{
+    background-color: rgb(51, 157, 157);
+    display: block;
+    border-radius:6px;
+}
+
+.nav-bar li a:hover {
+    background-color: transparent;
+}
+
+.customers-dropdown-menu:hover .customers-dropdown-content{
+    display: block;
+    overflow: visible;
+
+}
+
+.customers-dropdown-content {
+    display:none;
+    list-style-type: none;
+    position: absolute;
+    top:13%;
+    left:100%;
+    background-color:darkcyan;
+    color: whitesmoke;
+    text-decoration: none;
+    font-style: italic;
+    padding: 10px;
+    min-width: 170px;
+    z-index: 1001;
+    margin-left: -16px;
+    border-radius: 6px;
+}
+
+.find-customer-by {
+    display:none;
+    list-style-type: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 105px;
+    background-color:darkcyan;
+    color: whitesmoke;
+    padding: 0;
+    text-decoration: none;
+    font-style: italic;
+    z-index: 11;
+    border-radius: 6px;
+}
+
+.show-customers {
+    position: relative;
+}
+
+.show-customers:hover .find-customer-by {
+    display: block;
+    border-radius: 6px;
+}
+
+.accounts-dropdown-menu:hover .accounts-dropdown-content {
+    display:block;
+}
+
+.accounts-dropdown-content {
+    display:none;
+    list-style-type: none;
+    position: absolute;
+    top:29%;
+    left:100%;
+    background-color: darkcyan;
+    color: whitesmoke;
+    padding: 0;
+    text-decoration: none;
+    font-style: italic;
+    width: 170px;
+    margin-left: -16px;
+    z-index: 1001;
+    border-radius: 6px;
+}
+
+.show-accounts:hover .find-account-by {
+    display:block;
+}
+
+.find-account-by {
+    display:none;
+    list-style-type: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width:100px;
+    background-color:darkcyan;
+    color: rgb(53, 55, 52);
+    padding: 0;
+    text-decoration: none;
+    font-style: italic;
+    z-index: 11;
+    border-radius: 6px;
+}
+
+/* ------- HEADER ------- */
+header h1 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 1.8rem;
+    background-color: darkcyan;
+    color: whitesmoke;
+    padding: 20px;
+
+}
+
+/* ------- HOME BODY -------- */
+.home h2 {
+    text-align: center;
+    margin-top: 18%;
+    margin-left: 10%;
+    margin-bottom: 0;
+    font-size: 2rem;
+    font-weight: lighter;
+    background-color: rgb(252,238,222, .3);
+    width:80%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.home h3 {
+    margin-left: 10%;
+    margin-top: 0;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: lighter;
+    background-color: rgb(252,238,222, .3);
+    width: 80%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+/* ------- SHOW ALL CUSTOMERS -------- */
+
+.customers-table-title{
+    margin-left: 10%;
+    text-align: left;
+    font-weight: bold;
+}
+
+.customers-table, th, td {
+    margin-left: 10%;
+    border: rgb(110, 109, 109);
+    border-collapse: collapse;
+    text-align: center;
+    background-color: rgba(252, 238, 222, 0.343);
+    
+}
+
+.add-customer-quickaction-btn {
+    width: 30%;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: darkcyan;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* ------- FIND CUSTOMER BY ID -------- */
+
+.find-customer-by-id-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 5% auto;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* -------- ADD NEW CUSTOMER --------- */
+
+.new-customer-form {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    gap: 8px;
+    margin: 5% auto;
+    width: 70%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.new-account-form label {
+    display:flex;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* -------- UPDATE CUSTOMER --------- */
+
+.update-customer-form {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    gap: 8px;
+    margin: 5% auto;
+    width: 70%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* -------- DELETE CUSTOMER --------- */
+
+.delete-customer-form {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    gap: 8px;
+    margin: 5% auto;
+    width: 30%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ------- SHOW ALL ACCOUNTS -------- */
+
+.accounts-table-title{
+    margin-left: 10%;
+    text-align: left;
+    font-weight: bold;
+}
+
+.accounts-table, th, td {
+    margin-left: 10%;
+    border: rgb(110, 109, 109);
+    border-collapse: collapse;
+    text-align: center;
+    background-color: rgba(252, 238, 222, 0.343);
+    box-shadow: 2px 2px 2px #999;
+    
+}
+
+/* ------- FIND ACCOUNT BY ID -------- */
+
+.find-account-by-id-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 5% auto;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ------- FIND ACCOUNT BY BALANCE -------- */
+
+.find-account-by-balance-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 5% auto;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.accounts-findbybalance-table {
+    margin-left:10%;
+}
+
+/* -------- FIND ACCOUNT BY CUSTID ---------- */
+
+.find-account-by-custid-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 5% auto;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.accounts-by-custId-table {
+    margin-left:10%;
+}
+
+/* -------- ADD NEW ACCOUNT --------- */
+
+
+.new-account-form {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    gap: 8px;
+    margin: 5% auto;
+    width: 30%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-account-quickaction-btn {
+    width: 30%;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: darkcyan;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* -------- UPDATE ACCOUNT --------- */
+
+.update-account-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 5% auto;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* -------- DELETE ACCOUNT -------- */
+
+.delete-account-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 5% auto;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* -------- LOGIN -------- */
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 5% auto;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login span {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login label {
+ 
+    font-size: 1rem;
+    font-weight: 500;
+    width: 100%;
+
+}
+
+.login input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.login button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: darkcyan;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.register button:hover {
+    background-color: rgb(51, 157, 157);
+}
+
+/* -------- REGISTER ------ */
+
+.register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 5% auto;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.register span {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.register label {
+    font-size: 1rem;
+    font-weight: 500;
+    width: 100%;
+}
+
+.register input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.register button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: darkcyan;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.register button:hover {
+    background-color: rgb(51, 157, 157);
+}
+
+/* ------- USERS ---------- */
+.users-table {
+    width: 50%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: rgba(252, 238, 222, 0.7);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,289 @@
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="CSS/styles.css" />
+  </head>
+  <body>
+    <!-----INTRO------>
+    <!--nav bar-->
+    <ul class="nav-bar">
+      <li><a href="index.html">Home</a></li>
+
+      <li class="customers-dropdown-menu">
+        <a href="customers.html"> Customers&#9658; </a>
+        <ul class="customers-dropdown-content">
+          <li class="show-customers">
+            <a href="customers.html">Show Customers&#9658;</a>
+            <ul class="find-customer-by">
+              <li><a href="find-customer-by-id.html">Find by ID</a></li>
+            </ul>
+          </li>
+          <li><a href="add-new-customer.html">Add New Customer</a></li>
+          <li><a href="update-customer.html">Update Existing Customer</a></li>
+          <li><a href="delete-customer.html">Delete Customer</a></li>
+        </ul>
+      </li>
+
+      <li class="accounts-dropdown-menu">
+        <a href="accounts.html">Accounts&#9658;</a>
+        <ul class="accounts-dropdown-content">
+          <li class="show-accounts">
+            <a href="accounts.html">Show Accounts&#9658;</a>
+            <ul class="find-account-by">
+              <li><a href="find-account-by-id.html">Find by ID</a></li>
+              <li>
+                <a href="find-account-by-balance.html">Find by balance</a>
+              </li>
+              <li>
+                <a href="find-accounts-by-customer-id.html"
+                  >Find by customer ID</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="add-new-account.html">Add New Account</a></li>
+          <li><a href="update-account.html">Update Existing Account</a></li>
+          <li><a href="delete-account.html">Delete Existing Account</a></li>
+        </ul>
+      </li>
+      <li><a href="users.html">Users</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+    <header>
+      <h1>Customer and Account Management Web App</h1>
+    </header>
+
+    <main>
+      <h2 class="customers-table-title">All Customers</h2>
+      <table class="table customers-table" style="width: 80%">
+        <tr>
+          <th>Customer ID</th>
+          <th>Name</th>
+          <th>Account ID</th>
+          <th>Account Type</th>
+          <th>Actions</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Maria Castello</td>
+          <td>1</td>
+          <td>Savings</td>
+          <td>
+            <button class="btn btn-success" onclick="navigateToAddAccPage(1)">
+              Add Account
+            </button>
+            <button class="btn btn-primary" onclick="navigateToDeleteAccPage()">
+              Delete Account
+            </button>
+            <button
+              class="btn btn-warning"
+              onclick="navigateToUpdateCustPage(1)"
+            >
+              Update Customer
+            </button>
+            <button class="btn btn-danger" onclick="navigateToDeleteCustPage()">
+              Delete Customer
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Anne MacMillan</td>
+          <td>2</td>
+          <td>Savings</td>
+          <td>
+            <button class="btn btn-success" onclick="navigateToAddAccPage(2)">
+              Add Account
+            </button>
+            <button class="btn btn-primary" onclick="navigateToDeleteAccPage()">
+              Delete Account
+            </button>
+            <button
+              class="btn btn-warning"
+              onclick="navigateToUpdateCustPage(2)"
+            >
+              Update Customer
+            </button>
+            <button class="btn btn-danger" onclick="navigateToDeleteCustPage()">
+              Delete Customer
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Kieran Grant</td>
+          <td>3</td>
+          <td>Savings</td>
+          <td>
+            <button class="btn btn-success" onclick="navigateToAddAccPage(3)">
+              Add Account
+            </button>
+            <button class="btn btn-primary" onclick="navigateToDeleteAccPage()">
+              Delete Account
+            </button>
+            <button
+              class="btn btn-warning"
+              onclick="navigateToUpdateCustPage(3)"
+            >
+              Update Customer
+            </button>
+            <button class="btn btn-danger" onclick="navigateToDeleteCustPage()">
+              Delete Customer
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Jonas Schnappe</td>
+          <td>4</td>
+          <td>Savings</td>
+          <td>
+            <button class="btn btn-success" onclick="navigateToAddAccPage(4)">
+              Add Account
+            </button>
+            <button class="btn btn-primary" onclick="navigateToDeleteAccPage()">
+              Delete Account
+            </button>
+            <button
+              class="btn btn-warning"
+              onclick="navigateToUpdateCustPage(4)"
+            >
+              Update Customer
+            </button>
+            <button class="btn btn-danger" onclick="navigateToDeleteCustPage()">
+              Delete Customer
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Svea Olafsen</td>
+          <td>5</td>
+          <td>Savings</td>
+          <td>
+            <button class="btn btn-success" onclick="navigateToAddAccPage(5)">
+              Add Account
+            </button>
+            <button class="btn btn-primary" onclick="navigateToDeleteAccPage()">
+              Delete Account
+            </button>
+            <button
+              class="btn btn-warning"
+              onclick="navigateToUpdateCustPage(5)"
+            >
+              Update Customer
+            </button>
+            <button class="btn btn-danger" onclick="navigateToDeleteCustPage()">
+              Delete Customer
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Carlos Vasquez</td>
+          <td>6</td>
+          <td>Savings</td>
+          <td>
+            <button class="btn btn-success" onclick="navigateToAddAccPage(6)">
+              Add Account
+            </button>
+            <button class="btn btn-primary" onclick="navigateToDeleteAccPage()">
+              Delete Account
+            </button>
+            <button
+              class="btn btn-warning"
+              onclick="navigateToUpdateCustPage(6)"
+            >
+              Update Customer
+            </button>
+            <button class="btn btn-danger" onclick="navigateToDeleteCustPage()">
+              Delete Customer
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Carolina Carvalho</td>
+          <td>7</td>
+          <td>Savings</td>
+          <td>
+            <button class="btn btn-success" onclick="navigateToAddAccPage(7)">
+              Add Account
+            </button>
+            <button class="btn btn-primary" onclick="navigateToDeleteAccPage()">
+              Delete Account
+            </button>
+            <button
+              class="btn btn-warning"
+              onclick="navigateToUpdateCustPage(7)"
+            >
+              Update Customer
+            </button>
+            <button class="btn btn-danger" onclick="navigateToDeleteCustPage()">
+              Delete Customer
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Alexandra Ganz</td>
+          <td>8</td>
+          <td>Savings</td>
+          <td>
+            <button class="btn btn-success" onclick="navigateToAddAccPage(8)">
+              Add Account
+            </button>
+            <button class="btn btn-primary" onclick="navigateToDeleteAccPage()">
+              Delete Account
+            </button>
+            <button
+              class="btn btn-warning"
+              onclick="navigateToUpdateCustPage(8)"
+            >
+              Update Customer
+            </button>
+            <button class="btn btn-danger" onclick="navigateToDeleteCustPage()">
+              Delete Customer
+            </button>
+          </td>
+        </tr>
+      </table>
+      <button
+        class="btn btn-info add-customer-quickaction-btn"
+        onclick="navigateToAddCustPage()"
+      >
+        Add Customer
+      </button>
+
+      <script>
+        function navigateToUpdateCustPage(customerId) {
+          localStorage.setItem("customerId", customerId);
+          window.location.href = "update-customer.html";
+        }
+
+        function navigateToAddCustPage() {
+          window.location.href = "add-new-customer.html";
+        }
+
+        function navigateToAddAccPage(customerId) {
+          localStorage.setItem("customerId", customerId);
+          window.location.href = "add-new-account.html";
+        }
+
+        function navigateToDeleteAccPage() {
+          window.location.href = "delete-account.html";
+        }
+
+        function navigateToDeleteCustPage() {
+          window.location.href = "delete-customer.html";
+        }
+      </script>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+.navbar{
+    background-color: black;
+    color: white;
+}
+
+.navbar .nav-link {
+    color: white; /* White text for nav links */
+    text-decoration: none; /* Remove underline from links */
+    padding: 0 15px; /* Add spacing between nav items */
+}
+
+.navbar .nav-link:hover {
+    color: #ccc; /* Slightly lighter color on hover */
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar-brand {
+    color: white; /* Ensure the brand text is white */
+    font-weight: bold;
+    margin-right: 20px; /* Add spacing to separate it from nav items */
+    text-decoration: none;
+}
