@@ -7,9 +7,9 @@ test("renders add new account form correctly", async () => {
     render(<AddNewAccountPage />, { wrapper: MemoryRouter });
 
     expect(screen.getByText("Add New Account")).toBeInTheDocument();
-    expect(screen.getByText("Type:")).toBeInTheDocument();
-    expect(screen.getByText("Set Balance:")).toBeInTheDocument();
-    expect(screen.getByText("Set Interest Rate:")).toBeInTheDocument();
+    expect(screen.getByText("Account Type: ")).toBeInTheDocument();
+    expect(screen.getByText("Set Balance: ")).toBeInTheDocument();
+    expect(screen.getByText("Set Interest Rate: ")).toBeInTheDocument();
     
 });
 

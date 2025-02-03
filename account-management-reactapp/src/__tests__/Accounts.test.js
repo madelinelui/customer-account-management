@@ -45,7 +45,7 @@ test("renders accounts page correctly", async () => {
     );
 
     expect(screen.getByText("All Accounts")).toBeInTheDocument();
-    expect(Screen.getByText("Loading...")).toBeInTheDocument();
+    expect(screen.getByText("Loading...")).toBeInTheDocument();
 
     await waitFor(() => {
         expect(screen.getByText("Savings")).toBeInTheDocument();

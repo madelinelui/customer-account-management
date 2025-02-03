@@ -45,9 +45,9 @@ const FindAccountByBalancePage = () => {
             <label htmlFor="balance"
             >Search for accounts with a balance in range: </label><br />
             <label htmlFor="minBalance">min: </label>
-            <input type="value" name="minBalance" value={minBalance} onChange={ (e)=>setMinBalance(e.target.value)} />
+            <input id="minBalance" type="value" name="minBalance" value={minBalance} onChange={ (e)=>setMinBalance(e.target.value)} />
             <label htmlFor="maxBalance">max: </label>
-            <input type="value" name="maxBalance" value={ maxBalance} onChange={(e) =>setMaxBalance(e.target.value)} />
+            <input id="maxBalance" type="value" name="maxBalance" value={ maxBalance} onChange={(e) =>setMaxBalance(e.target.value)} />
             <button type="submit" className="btn btn-info">Search</button>
          </form>
 

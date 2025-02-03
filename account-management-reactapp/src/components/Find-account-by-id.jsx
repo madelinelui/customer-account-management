@@ -38,7 +38,7 @@ const FindAccountByIdPage = () => {
             <form className="find-account-by-id-form" onSubmit={handleSubmit}>
                 <h2 className="find-account-by-id-header">Find account by ID</h2>
                 <label htmlFor="accId">Enter account ID: </label>
-            <input type="value" name="accId" value={accountId} onChange={ (e)=>setAccountId(e.target.value)} />
+            <input id="accId" type="text" name="accId" value={accountId} onChange={ (e)=>setAccountId(e.target.value)} />
                 <button type="submit" className="btn btn-info">Search</button>
             </form>
 

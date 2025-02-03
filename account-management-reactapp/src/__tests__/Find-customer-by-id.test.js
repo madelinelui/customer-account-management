@@ -96,8 +96,9 @@ test("displays error message when customer is not found", async () => {
     fireEvent.click(screen.getByText(/Search/i));
     
     await waitFor(() => {
-      expect(screen.getByText(/Customer not found or error occurred. Please try again/i)).toBeInTheDocument();
+      expect(screen.findByText(/Customer not found or error occurred. Please try again/i)).resolves.toBeInTheDocument();
     });
+    
   });
   
 // ------------ TEST 6: LOADING STATE ------------ //

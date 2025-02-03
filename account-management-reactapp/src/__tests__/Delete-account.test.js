@@ -69,7 +69,7 @@ test("handles successful accoount deletion", async () => {
     fireEvent.click(button);
   });
 
-  expect(screen.getByText("Account deleted successfully!")).toBeInTheDocument();
+  expect(await screen.findByText("Account deleted successfully!")).toBeInTheDocument();
 });
 
 // --------------- TEST 5: FAILED DELETE REQUEST ------------ //
@@ -86,5 +86,5 @@ test("handles failed deletion request", async () => {
     fireEvent.click(button);
   });
 
-  expect(screen.getByText("Failed to delete account. ")).toBeInTheDocument();
+  expect(await screen.findByText("Failed to delete account. ")).toBeInTheDocument();
 });

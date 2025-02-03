@@ -17,7 +17,8 @@ test("renders add new customer form correctly", async () => {
 test("allows user inputs in fields", () => {
     render(<AddNewCustomerPage />, { wrapper: MemoryRouter });
 
-    const name = screen.getByLabelText("Name: ");
+    const name = screen.getByLabelText(/Name:/i);
+
     fireEvent.change(name, { target: { value: "Anna Fedorova" } });
     expect(name.value).toBe("Anna Fedorova");
 

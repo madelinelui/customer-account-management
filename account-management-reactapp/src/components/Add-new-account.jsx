@@ -91,7 +91,7 @@ const AddNewAccountPage = () => {
           <form className="new-account-form" onSubmit={handleSubmit}>
           <h2>Add New Account</h2>
             <label htmlFor="customerId">Enter customer ID: </label>
-            <input type="text" name="customerId" value={customerId} onChange={(e) => setCustomerId(e.target.value)} required></input>
+            <input id="customerId" type="text" name="customerId" value={customerId} onChange={(e) => setCustomerId(e.target.value)} required></input>
             
             <label htmlFor="type">Account Type: </label>
             <select value={type} onChange={(e) => setType(e.target.value)} required>
@@ -102,10 +102,11 @@ const AddNewAccountPage = () => {
             
             
             <label htmlFor="balance">Set Balance: </label>
-            <input type="text" name="balance" value={balance} onChange={(e) => setBalance(e.target.value)}></input>
+            <input id="balance" type="text" name="balance" value={balance} onChange={(e) => setBalance(e.target.value)}></input>
 
             <label htmlFor="interestRate">Set Interest Rate: </label>
             <input
+              id="interestRate"
               type="text"
               name="interestRate"
               placeholder="If applicable"

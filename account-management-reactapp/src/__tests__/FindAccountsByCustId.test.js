@@ -47,7 +47,7 @@ test("successful submission with valid input", async () => {
         expect(screen.getByText("Account Details")).toBeInTheDocument();
         expect(screen.getByText("Account ID")).toBeInTheDocument();
         expect(screen.getByText("1")).toBeInTheDocument();
-        expect(screen.getByText("2")).toBeInTheDocument();
+        expect(screen.getAllByText("2")).toBeInTheDocument();
     });
 });
 
@@ -79,9 +79,10 @@ test("displays error message when accounts are not found", async () => {
     fireEvent.change(screen.getByLabelText(/Enter customer ID/i), { target: { value: "999" } });
     fireEvent.click(screen.getByText(/Search/i));
     
-    await waitFor(() => {
-      expect(screen.getByText("Accounts not found, please try again.")).toBeInTheDocument();
+    await waitFor(async () => {
+      expect(await screen.findByText("Accounts not found, please try again.")).toBeInTheDocument();
     });
+    
   });
 
 

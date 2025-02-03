@@ -25,7 +25,7 @@ jest.mock('axios', () => ({
 test("field labels and search button loads", () => {
     render(<FindAccountByIdPage />);
 
-    expect(screen.getByLabelText(/Enter account ID: /i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Enter account ID/i)).toBeInTheDocument();
     expect(screen.getByText(/Search/i)).toBeInTheDocument();
 });
 
@@ -33,9 +33,10 @@ test("field labels and search button loads", () => {
 test("accountId state updates with user input", () => {
     render(<FindAccountByIdPage />);
 
-    fireEvent.change(screen.getByLabelText(/Enter account ID: /i), { target: { value: "1" } });
+    fireEvent.change(screen.getByLabelText(/Enter account ID/i)
+    , { target: { value: "1" } });
 
-    expect(screen.getByLabelText(/Enter account ID: /i).value).toBe("1");
+    expect(screen.getByLabelText(/Enter account ID/i).value).toBe("1");
 });
 
 // ------------------ TEST 3: SUBMIT FORM AND VALIDATION ------------- //
@@ -48,9 +49,9 @@ test("account details display with valid input", async () => {
     
     render(<FindAccountByIdPage />);
 
-    fireEvent.change(screen.getByLabelText(/Enter account ID: /i), { target: { value: "1" } });
+    fireEvent.change(screen.getByLabelText(/Enter account ID/i), { target: { value: "1" } });
 
-    expect(screen.getByLabelText(/Enter account ID: /i).value).toBe("1");
+    expect(screen.getByLabelText(/Enter account ID/i).value).toBe("1");
 
     await waitFor(() => {
         expect(screen.getByText(/Account Details/i)).toBeInTheDocument();
@@ -96,6 +97,6 @@ test("displays loading state during API call", async () => {
     fireEvent.change(screen.getByLabelText(/Enter account ID/i), { target: { value: "123" } });
     fireEvent.click(screen.getByText(/Search/i));
     
-    expect(screen.getByText("Loading...")).toBeInTheDocument();
+    expect(await screen.findByText("Loading...")).toBeInTheDocument();
   });
   

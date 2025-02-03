@@ -63,8 +63,9 @@ const AddNewCustomerPage = () => {
                 </select>
                
 
-                <label>Name:</label>
-                <input
+                <label htmlFor="custName">Name:</label>
+                    <input
+                        id="custName"
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -73,32 +74,36 @@ const AddNewCustomerPage = () => {
                
                 {/* Address Fields */}
                 <h3>Address</h3>
-                    <label>Street Number:</label>
+                    <label htmlFor="streetNumber">Street Number:</label>
                     <input
+                        id="streetNumber"
                         type="text"
                         value={streetNumber}
                         onChange={(e) => setStreetNumber(e.target.value)}
                         required
                     />
 
-                    <label>Postal Code:</label>
+                    <label htmlFor="postalCode">Postal Code:</label>
                     <input
+                        id="postalCode"
                         type="text"
                         value={postalCode}
                         onChange={(e) => setPostalCode(e.target.value)}
                         required
                     />
 
-                    <label>City:</label>
+                    <label htmlFor="city">City:</label>
                     <input
+                        id="city"
                         type="text"
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
                         required
                     />
 
-                    <label>Province:</label>
+                    <label htmlFor="province">Province:</label>
                     <input
+                        id="province"
                         type="text"
                         value={province}
                         onChange={(e) => setProvince(e.target.value)}

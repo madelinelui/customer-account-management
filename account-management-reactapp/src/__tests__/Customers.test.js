@@ -54,7 +54,7 @@ test("renders customers page correctly", async () => {
     );
 
     expect(screen.getByText("All Customers")).toBeInTheDocument();
-    expect(Screen.getByText("Loading...")).toBeInTheDocument();
+    expect(screen.getByText("Loading...")).toBeInTheDocument();
 
     await waitFor(() => {
         expect(screen.getByText("Anna Fedorova")).toBeInTheDocument();

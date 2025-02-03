@@ -43,7 +43,7 @@ const FindAccountsByCustId = () => {
             <form className="find-account-by-custid-form" onSubmit={handleSubmit}>
                 <h2>Find accounts by Customer ID</h2>
                 <label htmlFor="custId">Enter customer ID: </label>
-            <input type="value" name="custId" value={customerId} onChange={ (e)=>setCustomerId(e.target.value)} />
+            <input id="custId" type="value" name="custId" value={customerId} onChange={ (e)=>setCustomerId(e.target.value)} />
                 <button type="submit" class="btn btn-info">Search</button>
             </form>
 

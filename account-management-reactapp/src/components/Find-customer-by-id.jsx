@@ -40,9 +40,9 @@ const FindCustomerByIdPage = () => {
             <form className="find-customer-by-id-form" onSubmit={handleSubmit}>
                 <h2>Find customer by ID</h2>
                 <label htmlFor="custId">Enter customer ID: </label>
-                <input type="value" name="custId" value={customerId}
+                <input id="custId" type="value" name="custId" value={customerId}
                 onChange={(e) => setCustomerId(e.target.value)} />
-                <button type="submit" class="btn btn-info">Search</button>
+                <button type="submit" className="btn btn-info">Search</button>
             </form>
 
                 

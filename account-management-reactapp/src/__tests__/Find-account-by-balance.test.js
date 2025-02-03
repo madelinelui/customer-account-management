@@ -27,7 +27,7 @@ test("renders form correctly with balance range fields", () => {
     
     expect(screen.getByLabelText(/min/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/max/i)).toBeInTheDocument();
-    expect(screen.getByText(/search/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/search/i)).toBeInTheDocument();
 });
   
 // ----------------- TEST 2: INPUT HANDLING ----------- //
@@ -46,7 +46,7 @@ test("shows alert if balance range is missing", () => {
     render(<FindAccountByBalancePage />);
   
     window.alert = jest.fn();
-    fireEvent.click(screen.getByText(/search/i));
+    fireEvent.click(screen.getByRole("button", { name: /search/i }));
   
     expect(window.alert).toHaveBeenCalledWith("Please enter a value for the range you're looking for.");
   });
@@ -65,7 +65,7 @@ test("displays account data on successful API call", async () => {
     fireEvent.change(screen.getByLabelText(/min/i), { target: { value: "100" } });
     fireEvent.change(screen.getByLabelText(/max/i), { target: { value: "600" } });
   
-    fireEvent.click(screen.getByText(/search/i));
+    fireEvent.click(screen.getByRole("button", { name: /search/i }));
   
     await waitFor(() => expect(screen.getByText(/accountId/i)).toBeInTheDocument());
     expect(screen.getByText("Savings")).toBeInTheDocument();
@@ -80,9 +80,9 @@ test("displays loading state during API call", async () => {
   
     fireEvent.change(screen.getByLabelText(/min/i), { target: { value: "100" } });
     fireEvent.change(screen.getByLabelText(/max/i), { target: { value: "1000" } });
-    fireEvent.click(screen.getByText(/search/i));
+    fireEvent.click(screen.getByRole("button", { name: /search/i }));
   
-    expect(screen.getByText("Loading...")).toBeInTheDocument();
+    expect(screen.findByText("Loading...")).toBeInTheDocument();
   });
 
 // ------------- TEST 6: ERROR HANDLING -------------- //
@@ -93,9 +93,10 @@ test("displays error message when API call fails", async () => {
   
     fireEvent.change(screen.getByLabelText(/min/i), { target: { value: "100" } });
     fireEvent.change(screen.getByLabelText(/max/i), { target: { value: "1000" } });
-    fireEvent.click(screen.getByText(/search/i));
+    fireEvent.click(screen.getByRole("button", { name: /search/i }));
+
   
-    await waitFor(() => expect(screen.getByText("Failed to fetch accounts")).toBeInTheDocument());
+    await waitFor(() => expect(screen.findByText("Failed to fetch accounts")).resolves.toBeInTheDocument());
   });
   
   

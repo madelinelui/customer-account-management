@@ -74,7 +74,7 @@ test("handles successful customer deletion", async () => {
     fireEvent.click(button);
   });
 
-  expect(screen.getByText("Customer deleted successfully!")).toBeInTheDocument();
+  expect(await screen.findByText("Customer deleted successfully!")).toBeInTheDocument();
 });
 
 // --------------- TEST 5: FAILED DELETE REQUEST ------------ //
@@ -91,5 +91,5 @@ test("handles failed deletion request", async () => {
     fireEvent.click(button);
   });
 
-  expect(screen.getByText("Failed to delete customer.")).toBeInTheDocument();
+  expect(await screen.findByText("Failed to delete customer.")).toBeInTheDocument();
 });
