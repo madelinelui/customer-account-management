@@ -44,7 +44,7 @@ const FindAccountsByCustId = () => {
                 <h2>Find accounts by Customer ID</h2>
                 <label htmlFor="custId">Enter customer ID: </label>
             <input id="custId" type="value" name="custId" value={customerId} onChange={ (e)=>setCustomerId(e.target.value)} />
-                <button type="submit" class="btn btn-info">Search</button>
+                <button type="submit" className="btn btn-info">Search</button>
             </form>
 
 
